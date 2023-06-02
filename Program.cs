@@ -20,18 +20,23 @@ if (valorA <= 0)
 
 else 
 {
-    double resultadoDelta = valorB * valorB - 4 * valorA * valorC;
-        if (resultadoDelta < 0)
+    double resultadoDelta = Math.Sqrt((valorB * valorB) - (4 * valorA * valorC));
+        if (resultadoDelta <= 0)
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"Como o valor de delta é ({resultadoDelta}), a equação não possui valores reais. ");
+            Console.ResetColor();
             return;
         }
 
         else 
         {
-            x1 = (-valorB + Math.Sqrt(resultadoDelta)) / (2 * valorA);
-            x2 = (-valorB - Math.Sqrt(resultadoDelta)) / (2 * valorA);
+            x1 = (-valorB + (resultadoDelta)) / (2 * valorA);
+            x2 = (-valorB - (resultadoDelta)) / (2 * valorA);
 
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"Os possíveis resultados da sua equação são x1 = {x1}/ x2 = {x2}");
+            Console.ResetColor();
+            Console.WriteLine("");
         }
 }
