@@ -1,2 +1,2 @@
 # bhaskara
-Atividade para pratica - PC1
+Atividade para prática - PC1
