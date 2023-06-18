@@ -1,20 +1,20 @@
 ﻿double x1, x2;
 
-Console.WriteLine("-- Cálculo de Bhaskara --");
+mensagem("-- Cálculo de Bhaskara --", ConsoleColor.DarkYellow);
 
-Console.WriteLine("Digite qual será o valor de (A)... ");
+mensagem("Digite qual será o valor de (A)... ", ConsoleColor.White);
 double valorA = Convert.ToDouble(Console.ReadLine());
 
-Console.WriteLine("Digite qual será o valor de (B)... ");
+mensagem("Digite qual será o valor de (B)... ", ConsoleColor.White);
 double valorB = Convert.ToDouble(Console.ReadLine());
 
-Console.WriteLine("Digite qual será o valor de (C)... ");
+mensagem("Digite qual será o valor de (C)... ", ConsoleColor.White);
 double valorC = Convert.ToDouble(Console.ReadLine());
 
 if (valorA <= 0)
 {
-    Console.WriteLine("A equação descrita não equivale à uma equação do segundo grau! ");
-    Console.WriteLine($"O Valor inserido para (A) foi {valorA} ");
+    mensagem("A equação descrita não equivale à uma equação do segundo grau!", ConsoleColor.DarkRed);
+    mensagem($"O Valor inserido para (A) foi {valorA} ", ConsoleColor.DarkRed);;
     return;
 }
 
@@ -23,7 +23,7 @@ else
     double resultadoDelta = valorB * valorB - 4 * valorA * valorC;
         if (resultadoDelta < 0)
         {
-            Console.WriteLine($"Como o valor de delta é ({resultadoDelta}), a equação não possui valores reais. ");
+            mensagem($"Como o valor de delta é ({resultadoDelta}), a equação não possui valores reais. ", ConsoleColor.DarkRed);
             return;
         }
 
@@ -32,6 +32,14 @@ else
             x1 = (-valorB + Math.Sqrt(resultadoDelta)) / (2 * valorA);
             x2 = (-valorB - Math.Sqrt(resultadoDelta)) / (2 * valorA);
 
-            Console.WriteLine($"Os possíveis resultados da sua equação são x1 = {x1}/ x2 = {x2}");
+            mensagem($"Os possíveis resultados da sua equação são x1 = {x1}/ x2 = {x2}", ConsoleColor.Green);
         }
+}
+
+
+void mensagem(string mensagem, ConsoleColor corTexto)
+{
+    Console.ForegroundColor = corTexto;
+    Console.WriteLine(mensagem);
+    Console.ResetColor();
 }
