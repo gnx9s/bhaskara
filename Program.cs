@@ -32,7 +32,7 @@ else
             x1 = (-valorB + (resultadoDelta)) / (2 * valorA);
             x2 = (-valorB - (resultadoDelta)) / (2 * valorA);
 
-            mensagem($"Os possíveis resultados da sua equação são x1 = {x1}/ x2 = {x2}", ConsoleColor.Green);
+            mensagem($"Os possíveis resultados da sua equação são x1 = {Math.Round(x1, 0)}/ x2 = {Math.Round(x2, 0)}", ConsoleColor.Green);
         }
 }
 
